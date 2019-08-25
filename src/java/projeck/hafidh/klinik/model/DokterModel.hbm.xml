@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="projeck.hafidh.klinik.model.DokterModel" table="dokter_tbl">
+        <id name="kode_dokter" column="kode_dokter" type="string">
+            <generator class="assigned"></generator>
+        </id>
+        <property name="nama_dokter" column="nama_dokter" />
+        <property name="spesialis" column="spesialis" />
+        <property name="tarif" column="tarif" type="integer" />
+    </class>
+
+  
+
+</hibernate-mapping>

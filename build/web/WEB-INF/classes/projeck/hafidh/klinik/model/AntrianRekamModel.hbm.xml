@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="projeck.hafidh.klinik.model.AntrianRekamModel" table="antrianRekam_tbl" >
+        <id name="kode_kunjungan" column="kode_kunjungan" type="string" >
+            <generator class="assigned"></generator>
+        </id>
+        <property name="no_antrian" column="no_antrian" />
+        <property name="nama_pasien" column="nama_pasien" />
+        <property name="kode_poli" column="kode_poli" />
+        <property name="tarif_dokter" column="tarif_dokter" type="integer"/>
+    </class>
+  
+
+</hibernate-mapping>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="projeck.hafidh.klinik.model.PasienModel" table="pasien_tbl">
+        <id name="kode_pasien" column="kode_pasien" >
+            <generator class="assigned"></generator>
+        </id>
+        <property name="nama_pasien" column="nama_pasien" />
+        <property name="tanggal_lahir" column="tanggal_lahir" />
+        <property name="jenis_kelamin" column="jenis_kelamin" />
+        <property name="telepon" column="telepon" />
+        <property name="alamat" column="alamat" />
+        <property name="keterangan" column="keterangan" />
+            
+    </class>
+
+  
+
+</hibernate-mapping>

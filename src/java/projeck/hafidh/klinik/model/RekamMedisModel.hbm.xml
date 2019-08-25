@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="projeck.hafidh.klinik.model.RekamMedisModel" table="rekammedis_tbl">
+        <id name="kode_rekam" column="kode_rekam" type="string" >
+            <generator class="assigned"></generator>
+        </id>
+        <property name="kode_kunjungan" column="kode_kunjungan" />
+        <property name="keluhan" column="keluhan" />
+        <property name="diagnosa" column="diagnosa" />
+        <property name="tindakan" column="tindakan" />
+        <property name="resep" column="resep" />
+    </class>
+  
+
+</hibernate-mapping>

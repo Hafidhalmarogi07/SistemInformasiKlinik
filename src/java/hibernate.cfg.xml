@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <mapping resource="projeck/hafidh/klinik/model/KlinikModel.hbm.xml"/>
+    <mapping resource="projeck/hafidh/klinik/model/LoginModel.hbm.xml"/>
+    <mapping resource="projeck/hafidh/klinik/model/DokterModel.hbm.xml"/>
+    <mapping resource="projeck/hafidh/klinik/model/LayananModel.hbm.xml"/>
+    <mapping resource="projeck/hafidh/klinik/model/PasienModel.hbm.xml"/>
+    <mapping resource="projeck/hafidh/klinik/model/KaryawanModel.hbm.xml"/>
+    <mapping resource="projeck/hafidh/klinik/model/PoliModel.hbm.xml"/>
+    <mapping resource="projeck/hafidh/klinik/model/KunjunganModel.hbm.xml"/>
+    <mapping resource="projeck/hafidh/klinik/model/RekamMedisModel.hbm.xml"/>
+    <mapping resource="projeck/hafidh/klinik/model/AntrianModel.hbm.xml"/>
+    <mapping resource="projeck/hafidh/klinik/model/DataPembayaranModel.hbm.xml"/>
+    <mapping resource="projeck/hafidh/klinik/model/AntrianRekamModel.hbm.xml"/>
+    <mapping resource="projeck/hafidh/klinik/model/PembayaranModel.hbm.xml"/>
+  </session-factory>
+</hibernate-configuration>

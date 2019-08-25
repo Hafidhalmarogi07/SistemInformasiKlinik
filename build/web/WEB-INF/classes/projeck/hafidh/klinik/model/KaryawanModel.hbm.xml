@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="projeck.hafidh.klinik.model.KaryawanModel" table="karyawan_tbl">
+        <id name="id_karyawan" column="id_karyawan" type="string" >
+            <generator class="assigned"></generator>
+        </id>
+        <property name="nama_karyawan" column="nama_karyawan" />
+        <property name="password" column="password" />
+        <property name="alamat" column="alamat" />
+        <property name="bagian" column="bagian" />
+        <property name="telp" column="telp" />
+        <property name="kode_poli" column="kode_poli" />
+    </class>
+
+  
+
+</hibernate-mapping>

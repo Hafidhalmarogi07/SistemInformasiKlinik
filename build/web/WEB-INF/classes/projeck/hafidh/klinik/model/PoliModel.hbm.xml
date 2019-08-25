@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="projeck.hafidh.klinik.model.PoliModel" table="poli_tbl">
+        <id name="kode_poli" column="kode_poli" type="string" >
+            <generator class="assigned"></generator>
+        </id>
+        <property name="nama_poli" column="nama_poli" />
+        <property name="keterangan" column="keterangan" />
+    </class> 
+
+  
+
+</hibernate-mapping>

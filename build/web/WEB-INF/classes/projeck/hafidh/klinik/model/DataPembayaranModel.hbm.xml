@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+  "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+  "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="projeck.hafidh.klinik.model.DataPembayaranModel" table="datapembayaran_tbl">
+        <id name="kode_pembayaran" column="kode_pembayaran" type="string">
+            <generator class="assigned"></generator>
+        </id>
+        <property name="kode_kunjungan" column="kode_kunjungan" />
+        <property name="tarif_dokter" column="tarif_dokter" type="integer" />
+        <property name="obat" column="obat" type="integer"/>
+        <property name="tindakan" column="tindakan" />
+        <property name="harga_tindakan" column="harga_tindakan" type="integer" />
+        <property name="total" column="total" type="integer" />
+        
+    </class>
+
+  
+
+</hibernate-mapping>

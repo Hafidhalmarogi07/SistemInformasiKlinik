@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!-- was: <?xml version="1.0" encoding="UTF-8"?> -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation=
+        "http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+        http://www.springframework.org/schema/context 
+        http://www.springframework.org/schema/context/spring-context-4.0.xsd
+        http://www.springframework.org/schema/mvc 
+        http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+        http://www.springframework.org/schema/tx 
+        http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+    
+    <context:component-scan base-package="projeck.hafidh.klinik.dao"/>
+    <context:component-scan base-package="projeck.hafidh.klinik.service" />
+    
+    
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+    <bean id="transactionManager"
+            class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+          <property name="sessionFactory" ref="sessionFactory"/>
+      </bean>
+      <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+          <property name="dataSource" ref="dataSource"></property>
+          <property name="mappingResources">
+              <list>
+                  <value>projeck/hafidh/klinik/model/LoginModel.hbm.xml</value>
+                  <value>projeck/hafidh/klinik/model/DokterModel.hbm.xml</value>
+                  <value>projeck/hafidh/klinik/model/PoliModel.hbm.xml</value>
+                  <value>projeck/hafidh/klinik/model/PasienModel.hbm.xml</value>
+                  <value>projeck/hafidh/klinik/model/KaryawanModel.hbm.xml</value>
+                  <value>projeck/hafidh/klinik/model/KunjunganModel.hbm.xml</value>
+                  <value>projeck/hafidh/klinik/model/RekamMedisModel.hbm.xml</value>
+                  <value>projeck/hafidh/klinik/model/AntrianModel.hbm.xml</value>
+                 <value>projeck/hafidh/klinik/model/AntrianRekamModel.hbm.xml</value>
+                 <value>projeck/hafidh/klinik/model/DataPembayaranModel.hbm.xml</value>
+              </list>
+          </property>
+          <property name="hibernateProperties">
+              <props>
+                  <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+                  <prop key="hibernate.hbm2ddl.auto">update</prop>
+                  <prop key="hibernate.show_sql">true</prop>
+              </props>
+          </property>
+                  
+      </bean>
+
+    <bean id="propertyConfigurer"
+          class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"
+          p:location="/WEB-INF/jdbc.properties" />
+
+<bean id="dataSource"
+    class="org.springframework.jdbc.datasource.DriverManagerDataSource"
+    p:driverClassName="${jdbc.driverClassName}"
+    p:url="${jdbc.url}"
+    p:username="${jdbc.username}"
+    p:password="${jdbc.password}" />
+
+    <bean id="loginService" class="projeck.hafidh.klinik.service.impl.LoginServiceImpl" ></bean>
+    <bean id="loginDao" class="projeck.hafidh.klinik.dao.impl.LoginDaoImpl"></bean>
+    <bean id="dokterService" class="projeck.hafidh.klinik.service.impl.DokterServiceImpl" ></bean>
+    <bean id="dokterDao" class="projeck.hafidh.klinik.dao.impl.DokterDaoImpl"></bean>
+    <bean id="poliService" class="projeck.hafidh.klinik.service.impl.PoliServiceImpl" ></bean>
+    <bean id="poliDao" class="projeck.hafidh.klinik.dao.impl.PoliDaoImpl"></bean>
+    <bean id="pasienService" class="projeck.hafidh.klinik.service.impl.PasienServiceImpl" ></bean>
+    <bean id="pasienDao" class="projeck.hafidh.klinik.dao.impl.PasienDaoImpl"></bean>
+    <bean id="karyawanService" class="projeck.hafidh.klinik.service.impl.KaryawanServiceImpl" ></bean>
+    <bean id="karyawanDao" class="projeck.hafidh.klinik.dao.impl.KaryawanDaoImpl"></bean>
+    <bean id="kunjunganService" class="projeck.hafidh.klinik.service.impl.KunjunganServiceImpl" ></bean>
+    <bean id="kunjunganDao" class="projeck.hafidh.klinik.dao.impl.KunjunganDaoImpl"></bean>
+    <bean id="rekamService" class="projeck.hafidh.klinik.service.impl.RekamMedisServiceImpl" ></bean>
+    <bean id="rekamMedisDao" class="projeck.hafidh.klinik.dao.impl.RekamMedisDaoImpl"></bean>
+    <bean id="antrianService" class="projeck.hafidh.klinik.service.impl.AntrianServiceImpl" ></bean>
+    <bean id="antrianMedisDao" class="projeck.hafidh.klinik.dao.impl.AntrianDaoImpl"></bean>
+    <bean id="pembayaranService" class="projeck.hafidh.klinik.service.impl.DataPembayaranServiceImpl" ></bean>
+    <bean id="pembayaranDao" class="projeck.hafidh.klinik.dao.impl.DataPembayaranDaoImpl"></bean>
+    <bean id="antrianRekamService" class="projeck.hafidh.klinik.service.impl.DataPembayaranServiceImpl" ></bean>
+    <bean id="antrianRekamDao" class="projeck.hafidh.klinik.dao.impl.AntrianRekamDaoImpl"></bean>
+    <bean id="laporanService" class="projeck.hafidh.klinik.service.impl.LoginServiceImpl" ></bean>
+    <bean id="laporanDao" class="projeck.hafidh.klinik.dao.impl.LaporanDaoImpl"></bean>
+    
+
+    <!-- ADD PERSISTENCE SUPPORT HERE (jpa, hibernate, etc) -->
+
+</beans>
