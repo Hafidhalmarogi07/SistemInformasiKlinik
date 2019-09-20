@@ -7,7 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-<%@include file="HalamanUtama.jsp" %>
+<%@include file="MenuAdmin.jsp" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -50,7 +50,7 @@
                 margin: 2px 2px;
                 cursor: pointer;
                 border-radius: 12px;
-                width:150px;
+                width:170px;
             }
         </style>
     </head>
@@ -58,7 +58,7 @@
         <br></br>
         <c:url var="tambahDataDokter" value="/doTambahDataDokter.htm">        
         </c:url>
-        <a href="${tambahDataDokter}" style="padding-left: 40px"><button id="sbm">Tambah</button></a>   
+        <a href="${tambahDataDokter}" style="padding-left: 40px"><button id="sbm">Tambah Dokter</button></a>   
     <center>
      <table id="customers">
         <tr>
@@ -94,3 +94,5 @@
     </center>
     </body>
 </html>
+<script>
+</script>

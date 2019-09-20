@@ -57,6 +57,25 @@ public class AntrianRekamDaoImpl extends HibernateUtil implements AntrianRekamDa
         antrian.setKode_kunjungan(id);
         getSession().delete(antrian);
     }
+
+    @Override
+    public List<Object[]> getDataAtrian() throws Exception {
+        List<Object[]> data=null;
+        String sql="SELECT a.kode_kunjungan,a.no_antrian,b.kode_pasien,b.nama_pasien,c.kode_poli,c.nama_poli,d.kode_dokter,d.tarif FROM antrianrekam_tbl a JOIN pasien_tbl b ON a.kode_pasien=b.kode_pasien JOIN poli_tbl c ON a.kode_poli=c.kode_poli JOIN dokter_tbl d ON a.kode_dokter=d.kode_dokter ORDER BY no_antrian;";
+        Query query=createNativeQuery(sql);
+        data=query.list();
+        
+        return data;
+    }
+
+    @Override
+    public List<Object[]> getAntrianById(String id) throws Exception {
+        List<Object[]> data=null;
+        String sql="SELECT a.kode_kunjungan,b.kode_dokter,b.tarif FROM antrianrekam_tbl a JOIN dokter_tbl b ON a.kode_dokter=b.kode_dokter WHERE a.kode_kunjungan=:KJ";
+        Query query=createNativeQuery(sql).setParameter("KJ", id);
+        data=query.list();
+        return data;
+    }
     
     
 }

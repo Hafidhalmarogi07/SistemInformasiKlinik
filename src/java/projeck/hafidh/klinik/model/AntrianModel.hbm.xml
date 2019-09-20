@@ -10,7 +10,7 @@
             <generator class="assigned"></generator>
         </id>
         <property name="no_antrian" column="no_antrian" />
-        <property name="nama_pasien" column="nama_pasien" />
+        <property name="kode_pasien" column="kode_pasien" />
         <property name="kode_poli" column="kode_poli" />
         <property name="kode_dokter" column="kode_dokter" />
     </class>

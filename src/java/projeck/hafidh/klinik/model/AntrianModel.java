@@ -10,7 +10,7 @@ package projeck.hafidh.klinik.model;
  * @author Acer
  */
 public class AntrianModel {
-    String kode_kunjungan,no_antrian,nama_pasien,kode_poli,kode_dokter;
+    String kode_kunjungan,no_antrian,kode_pasien,kode_poli,kode_dokter;
 
     public String getKode_dokter() {
         return kode_dokter;
@@ -19,13 +19,15 @@ public class AntrianModel {
     public void setKode_dokter(String kode_dokter) {
         this.kode_dokter = kode_dokter;
     }
-    public String getNama_pasien() {
-        return nama_pasien;
+
+    public String getKode_pasien() {
+        return kode_pasien;
     }
 
-    public void setNama_pasien(String nama_pasien) {
-        this.nama_pasien = nama_pasien;
+    public void setKode_pasien(String kode_pasien) {
+        this.kode_pasien = kode_pasien;
     }
+    
     
     public String getNo_antrian() {
         return no_antrian;

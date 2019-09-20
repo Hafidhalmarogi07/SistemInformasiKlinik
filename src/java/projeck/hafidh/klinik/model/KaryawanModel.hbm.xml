@@ -10,10 +10,11 @@
             <generator class="assigned"></generator>
         </id>
         <property name="nama_karyawan" column="nama_karyawan" />
-        <property name="password" column="password" />
+        <property name="jenis_kelamin" column="jenis_kelamin"/>
         <property name="alamat" column="alamat" />
-        <property name="bagian" column="bagian" />
         <property name="telp" column="telp" />
+        <property name="password" column="password" />
+        <property name="status_bagian" column="status_bagian" />
         <property name="kode_poli" column="kode_poli" />
     </class>
 

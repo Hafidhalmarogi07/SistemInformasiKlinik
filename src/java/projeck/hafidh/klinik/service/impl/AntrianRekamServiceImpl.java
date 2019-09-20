@@ -71,9 +71,9 @@ public class AntrianRekamServiceImpl implements AntrianRekamService{
                     if(model.getKode_poli()!= null){
                         antrianDto.setKode_poli(model.getKode_poli());
                     }
-                   // if(model.getKode_dokter()!=nul){
-                        antrianDto.setTarif_dokter(model.getTarif_dokter());
-                    //}
+                    if(model.getKode_dokter()!=null){
+                        antrianDto.setTarif_dokter(1);
+                    }
                    listDataDto.add(antrianDto);
                 }
             }
@@ -95,7 +95,58 @@ public class AntrianRekamServiceImpl implements AntrianRekamService{
 
     @Override
     public void deleteDataAntrianRekam(String kdkunjungan) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+         try {
+            antrianRekamDao.deleteAntrianRekam(kdkunjungan);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public List<AntrianRekamDto> getAntrianRekam() throws Exception {
+        List <AntrianRekamDto> listDataDto = new ArrayList<>();
+        List <Object[]> listData = antrianRekamDao.getDataAtrian();
+        AntrianRekamDto antrianDto = null;
+        try {
+            if(listData != null){
+                for(Object[] model : listData){
+                    antrianDto = new AntrianRekamDto();
+                        antrianDto.setKode_kunjungan(model[0].toString());
+                        antrianDto.setNo_antrian(model[1].toString());
+                        antrianDto.setKode_pasien(model[2].toString());
+                        antrianDto.setNama_pasien(model[3].toString());
+                        antrianDto.setKode_poli(model[4].toString());
+                        antrianDto.setNama_poli(model[5].toString());
+                        antrianDto.setKode_dokter(model[6].toString());
+                        antrianDto.setTarif_dokter(Integer.parseInt(model[7].toString()));
+                    listDataDto.add(antrianDto);
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }        
+        return listDataDto;
+    }
+
+    @Override
+    public List<AntrianRekamDto> getAntrianById(String id) throws Exception {
+        List <AntrianRekamDto> listDataDto = new ArrayList<>();
+        List <Object[]> listData = antrianRekamDao.getAntrianById(id);
+        AntrianRekamDto antrianDto = null;
+       try {
+            if(listData != null){
+                for(Object[] model : listData){
+                    antrianDto = new AntrianRekamDto();
+                        antrianDto.setKode_kunjungan(model[0].toString());
+                        antrianDto.setKode_dokter(model[1].toString());
+                        antrianDto.setTarif_dokter(Integer.parseInt(model[2].toString()));
+                    listDataDto.add(antrianDto);
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }        
+        return listDataDto;
     }
     
     

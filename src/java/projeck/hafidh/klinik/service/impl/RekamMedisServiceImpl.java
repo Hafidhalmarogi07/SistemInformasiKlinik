@@ -64,29 +64,14 @@ public class RekamMedisServiceImpl implements RekamMedisService{
         } catch (Exception e) {
             e.printStackTrace();
         }
-//        List <AntrianRekamModel> listDatarekam = antrianRekamDao.getListDataAntrianRekam();
-//        int indx=0;
-//        for(AntrianRekamModel model1 : listDatarekam){
-//            String tamp1=model1.getNo_antrian();
-//            ind=Integer.parseInt(tamp1);
-//        }
-//
-//        ind=indx+1;
         AntrianRekamModel antrianRekamModel = new AntrianRekamModel();
         try {
             antrianRekamModel.setKode_kunjungan(rekamMedisDto.getKode_kunjungan());
             antrianRekamModel.setNo_antrian("1");
-            antrianRekamModel.setNama_pasien(rekamMedisDto.getNama_pasien());
-            antrianRekamModel.setKode_poli(rekamMedisDto.getKeluhan());
-            DokterModel datadokter = null;
-        try {
-            datadokter = datadok.getDokterById(rekamMedisDto.getId_dokter());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-            antrianRekamModel.setTarif_dokter(datadokter.getTarif());
-            
-           antrianRekamDao.saveDataAntrianRekam(antrianRekamModel);
+            antrianRekamModel.setKode_pasien(rekamMedisDto.getNama_pasien());
+            antrianRekamModel.setKode_poli(rekamMedisDto.getKode_poli());
+            antrianRekamModel.setKode_dokter(rekamMedisDto.getId_dokter());
+            antrianRekamDao.saveDataAntrianRekam(antrianRekamModel);
                        
         } catch (Exception e) {
             e.printStackTrace();
@@ -183,7 +168,16 @@ public class RekamMedisServiceImpl implements RekamMedisService{
 
     @Override
     public void doUpdateDataRekamMedis(RekamMedisDto rekamMedisDto) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
+        RekamMedisModel rek=new RekamMedisModel();
+        try {
+            rek.setKode_rekam(rekamMedisDto.getKode_rekam());
+            rek.setKode_kunjungan(rekamMedisDto.getKode_kunjungan());
+            rek.setKeluhan(rekamMedisDto.getKeluhan());
+            rek.setDiagnosa(rekamMedisDto.getDiagnosa());
+            rek.setResep(rekamMedisDto.getResep());
+            rek.setTindakan(rekamMedisDto.getTindakan());
+        } catch (Exception e) {
+        }
+        rekamMedisDao.updateRekamMedis(rek);   
+    }    
 }

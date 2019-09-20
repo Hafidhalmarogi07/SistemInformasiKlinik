@@ -6,6 +6,7 @@
 package projeck.hafidh.klinik.dao;
 
 import java.util.List;
+import projeck.hafidh.klinik.dto.KaryawanDto;
 import projeck.hafidh.klinik.model.KaryawanModel;
 
 /**
@@ -19,4 +20,5 @@ public interface KaryawanDao {
     public void deleteKaryawan(String id);
     public void updateKaryawan(KaryawanModel karyawanModel);
     public List<KaryawanModel> getListKaryawanUpdate(String kdKaryawan);
+    public List<KaryawanModel> getlistlogin(KaryawanDto loginDto) throws Exception;
 }

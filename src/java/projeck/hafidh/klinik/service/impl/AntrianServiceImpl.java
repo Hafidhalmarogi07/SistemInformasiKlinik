@@ -11,12 +11,8 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import projeck.hafidh.klinik.dao.AntrianDao;
-import projeck.hafidh.klinik.dao.KunjunganDao;
-import projeck.hafidh.klinik.dao.PasienDao;
 import projeck.hafidh.klinik.dto.AntrianDto;
 import projeck.hafidh.klinik.model.AntrianModel;
-import projeck.hafidh.klinik.model.KunjunganModel;
-import projeck.hafidh.klinik.model.PasienModel;
 import projeck.hafidh.klinik.service.AntrianService;
 
 /**
@@ -34,24 +30,19 @@ public class AntrianServiceImpl implements AntrianService {
     @Override
     public List<AntrianDto> getListAntrian() throws Exception {
         List <AntrianDto> listDataDto = new ArrayList<>();
-        List <AntrianModel> listData = antrianDao.getListDataAntrian();
+        List <Object[]> listData = antrianDao.getDataAntrian();
         AntrianDto antrianDto = null;
         try {
             if(listData != null){
-                for(AntrianModel model : listData){
+                for(Object[] model : listData){
                     antrianDto = new AntrianDto();
-                    if(model.getKode_kunjungan()!= null){
-                        antrianDto.setKode_kunjungan(model.getKode_kunjungan());
-                    }
-                    if(model.getNo_antrian()!= null){
-                        antrianDto.setNo_antrian(model.getNo_antrian());
-                    }
-                    if(model.getKode_poli()!= null){
-                        antrianDto.setKode_poli(model.getKode_poli());
-                    }
-                    if(model.getKode_dokter()!=null){
-                        antrianDto.setKode_dokter(model.getKode_dokter());
-                    }
+                        antrianDto.setKode_kunjungan(model[0].toString());
+                        antrianDto.setNo_antrian(model[1].toString());
+                        antrianDto.setKode_pasien(model[2].toString());
+                        antrianDto.setNama_pasien(model[3].toString());
+                        antrianDto.setKode_poli(model[4].toString());
+                        antrianDto.setNama_poli(model[5].toString());
+                        antrianDto.setKode_dokter(model[6].toString());
                     listDataDto.add(antrianDto);
                 }
             }
@@ -76,8 +67,8 @@ public class AntrianServiceImpl implements AntrianService {
                     if(model.getNo_antrian()!= null){
                         antrianDto.setNo_antrian(model.getNo_antrian());
                     }
-                    if(model.getNama_pasien()!= null){
-                        antrianDto.setNama_pasien(model.getNama_pasien());
+                    if(model.getKode_pasien()!= null){
+                        antrianDto.setNama_pasien(model.getKode_pasien());
                     }
                     if(model.getKode_poli()!= null){
                         antrianDto.setKode_poli(model.getKode_poli());
@@ -121,7 +112,7 @@ public class AntrianServiceImpl implements AntrianService {
         try {
             antrianModel.setKode_kunjungan(kod_kun);
             antrianModel.setNo_antrian(String.valueOf(noantrian));
-            antrianModel.setNama_pasien(nama);
+            antrianModel.setKode_pasien(nama);
             antrianModel.setKode_poli(ko_pol);
             antrianModel.setKode_dokter(kod_dok);
             

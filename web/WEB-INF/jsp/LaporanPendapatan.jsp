@@ -122,6 +122,7 @@
                     }else if(met==0){
                         content += '<tr> <td>'+ i+1 + '</td><td>' + data[i].kode_pembayaran + '</td><td>'+ data[i].tanggal_kunjungan + '</td><td>'+ data[i].tarif_dokter + '</td><td>'+ data[i].obat + '</td><td>'+ data[i].harga_tindakan + '</td><td>'+ data[i].metode_pembayaran + '</td><tr>';
 
+
                         
                     }
                 }

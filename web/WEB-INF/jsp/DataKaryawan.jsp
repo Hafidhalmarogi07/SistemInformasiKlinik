@@ -7,7 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-<%@include file="HalamanUtama.jsp" %>
+<%@include file="MenuAdmin.jsp" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -50,7 +50,7 @@
                 margin: 2px 2px;
                 cursor: pointer;
                 border-radius: 12px;
-                width:150px;
+                width:175px;
             }
         </style>
     </head>
@@ -59,17 +59,18 @@
         <br/>
         <c:url var="tambahDataKaryawan" value="/doTambahDataKaryawan.htm">        
         </c:url>
-        <a href="${tambahDataKaryawan}" style="padding-left: 140px"><button id="sbm">Tambah Karyawan</button></a>
+        <a href="${tambahDataKaryawan}" style="padding-left: 40px"><button id="sbm">Tambah Karyawan</button></a>
     <center>
         <table id="customers">
             <tr>
                 <th>No</th> 
                 <th>Id Karyawan</th>            
-                <th>Nama Karyawan</th>            
-                <th>Password</th>         
+                <th>Nama Karyawan</th> 
+                <th>Jenis Kelamin</th>               
                 <th>Alamat</th>
-                <th>Bagian</th>
-                <th>Telepon</th>
+                <th>Nomor Tlpn</th>
+                <th>Password</th>
+                <th>Status Bagian</th>
                 <th> Kode Poli</th>
                 <th>Delete</th>
                 <th>Update</th>
@@ -80,10 +81,11 @@
                     <td >${index}</td>
                     <td>${listKaryawan.id_karyawan}</td>
                     <td>${listKaryawan.nama_karyawan}</td>
-                    <td>${listKaryawan.password}</td> 
+                    <td>${listKaryawan.jenis_kelamin}</td>
                     <td>${listKaryawan.alamat}</td>
-                    <td>${listKaryawan.bagian}</td> 
                     <td>${listKaryawan.telp}</td>
+                    <td>${listKaryawan.password}</td>
+                    <td>${listKaryawan.bagian}</td> 
                     <td>${listKaryawan.kode_poli}</td> 
                     <c:url var="deleteKaryawan" value="/deleteDataKaryawan.htm">
                         <c:param name="id_Karyawan" value="${listKaryawan.id_karyawan}"/>

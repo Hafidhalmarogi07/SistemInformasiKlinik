@@ -10,16 +10,8 @@ package projeck.hafidh.klinik.dto;
  * @author Acer
  */
 public class AntrianRekamDto {
-     String kode_kunjungan,no_antrian,nama_pasien,kode_poli;
+     String kode_kunjungan,no_antrian,kode_pasien,nama_pasien,kode_poli,nama_poli,kode_dokter;
      int tarif_dokter;
-
-    public int getTarif_dokter() {
-        return tarif_dokter;
-    }
-
-    public void setTarif_dokter(int tarif_dokter) {
-        this.tarif_dokter = tarif_dokter;
-    }
 
     public String getKode_kunjungan() {
         return kode_kunjungan;
@@ -37,6 +29,14 @@ public class AntrianRekamDto {
         this.no_antrian = no_antrian;
     }
 
+    public String getKode_pasien() {
+        return kode_pasien;
+    }
+
+    public void setKode_pasien(String kode_pasien) {
+        this.kode_pasien = kode_pasien;
+    }
+
     public String getNama_pasien() {
         return nama_pasien;
     }
@@ -52,6 +52,33 @@ public class AntrianRekamDto {
     public void setKode_poli(String kode_poli) {
         this.kode_poli = kode_poli;
     }
+
+    public String getNama_poli() {
+        return nama_poli;
+    }
+
+    public void setNama_poli(String nama_poli) {
+        this.nama_poli = nama_poli;
+    }
+
+    public String getKode_dokter() {
+        return kode_dokter;
+    }
+
+    public void setKode_dokter(String kode_dokter) {
+        this.kode_dokter = kode_dokter;
+    }
+
+    public int getTarif_dokter() {
+        return tarif_dokter;
+    }
+
+    public void setTarif_dokter(int tarif_dokter) {
+        this.tarif_dokter = tarif_dokter;
+    }
+     
+
+    
      
     
 }

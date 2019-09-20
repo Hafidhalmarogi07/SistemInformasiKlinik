@@ -18,4 +18,7 @@ public interface AntrianDao {
     public List<AntrianModel> getListDataAntrianByPoli(String id_poli)throws Exception;
     public void deleteAntrian(String id);
     public AntrianModel getAntrianById(String id) throws Exception;
+    public List<Object[]> getDataAntrian()throws Exception;
+    public List<Object[]> getDataAntrianByPoli(String poli)throws Exception;
+    public void updateAntrian(AntrianModel antrianModel);
 }

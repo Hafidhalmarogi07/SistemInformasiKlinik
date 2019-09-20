@@ -10,7 +10,7 @@ package projeck.hafidh.klinik.model;
  * @author Acer
  */
 public class KaryawanModel {
-    String id_karyawan,nama_karyawan,password,alamat,bagian,telp,kode_poli;
+    String id_karyawan,nama_karyawan,jenis_kelamin,password,alamat,status_bagian,telp,kode_poli;
 
     public String getId_karyawan() {
         return id_karyawan;
@@ -43,15 +43,6 @@ public class KaryawanModel {
     public void setAlamat(String alamat) {
         this.alamat = alamat;
     }
-
-    public String getBagian() {
-        return bagian;
-    }
-
-    public void setBagian(String bagian) {
-        this.bagian = bagian;
-    }
-
     public String getTelp() {
         return telp;
     }
@@ -67,6 +58,23 @@ public class KaryawanModel {
     public void setKode_poli(String kode_poli) {
         this.kode_poli = kode_poli;
     }
+
+    public String getJenis_kelamin() {
+        return jenis_kelamin;
+    }
+
+    public void setJenis_kelamin(String jenis_kelamin) {
+        this.jenis_kelamin = jenis_kelamin;
+    }
+
+    public String getStatus_bagian() {
+        return status_bagian;
+    }
+
+    public void setStatus_bagian(String status_bagian) {
+        this.status_bagian = status_bagian;
+    }
+    
     
     
 }

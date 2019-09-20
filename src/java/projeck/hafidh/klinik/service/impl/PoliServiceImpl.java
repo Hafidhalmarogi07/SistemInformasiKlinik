@@ -32,7 +32,7 @@ public class PoliServiceImpl implements PoliService {
        int ind=1;
         for(PoliModel model : listData){
             String tamp=model.getKode_poli();
-            String tamp1=tamp.substring(1);
+            String tamp1=tamp.substring(2);
             if(ind<Integer.parseInt(tamp1)){
                 ind=Integer.parseInt(tamp1);
            }

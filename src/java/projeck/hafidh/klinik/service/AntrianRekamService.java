@@ -18,5 +18,7 @@ public interface AntrianRekamService {
     public List <AntrianRekamDto> getListAntrianRekam()throws Exception;
     public AntrianRekamModel getListAntrianRekamById(String kd)throws Exception;
     public void deleteDataAntrianRekam(String kdkunjungan) throws Exception;
+    public List<AntrianRekamDto> getAntrianRekam() throws Exception;
+    public List<AntrianRekamDto> getAntrianById(String id) throws Exception;
     
 }

@@ -22,12 +22,12 @@
     </head>
     <body onload="tampil()">
         
-        <div id="divform" >
+        <div id="divform" style="width: 600px; margin-left: 30%">
             <form:form id="kunjungan" action="saveKunjungan.htm" modelAttribute="kunjunganDto" method="POST">
                 <center><label style="font-size: 20px">Tambah Kunjungan </label></center>
                 <br>
                 <label >Tanggal Kunjungan</label>
-                <form:input path="tanggal_kunjungan" id="tl"  type="date" style="width:30%"/>
+                <form:input path="tanggal_kunjungan" id="tl"  type="date"/>
                 <br>
                 <label > Poli</label>
                 <form:select path="Kode_poli" class="validate validate[required]" id="poli">

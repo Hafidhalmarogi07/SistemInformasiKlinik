@@ -10,8 +10,23 @@ package projeck.hafidh.klinik.dto;
  * @author Acer
  */
 public class AntrianDto {
-    String kode_kunjungan,no_antrian,kode_poli,nama_pasien,kode_dokter;
+    String kode_kunjungan,no_antrian,kode_poli,nama_poli,kode_pasien,nama_pasien,kode_dokter;
 
+    public String getNama_poli() {
+        return nama_poli;
+    }
+
+    public void setNama_poli(String nama_poli) {
+        this.nama_poli = nama_poli;
+    }
+
+    public String getKode_pasien() {
+        return kode_pasien;
+    }
+
+    public void setKode_pasien(String kode_pasien) {
+        this.kode_pasien = kode_pasien;
+    }
     public String getKode_dokter() {
         return kode_dokter;
     }

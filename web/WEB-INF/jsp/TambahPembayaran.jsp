@@ -12,34 +12,77 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Tambah Pembayaran</title>
          <link rel="stylesheet" href="boostrap/css/cssinput.css">
         <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
         <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
         <link rel="stylesheet" href="//resources/demos/style.css">
         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <style>
+            #customers {
+                font-family: "Times New Roman", Arial, Helvetica, sans-serif;
+                border-collapse: collapse;
+                width: 95%;
+            }
+
+            #customers td, #customers th {
+                border: 1px solid #ddd;
+                padding: 8px;
+            }
+
+            #customers tr:nth-child(even){background-color: white;}
+
+            #customers tr:hover {background-color: #ddd;}
+
+            #customers th {
+                padding-top: 12px;
+                padding-bottom: 12px;
+                text-align: center;
+                background-color: #4CAF50;
+                color: white;
+
+            }
+
+            #sbm{
+                background-color: #4CAF50; /* Green */
+                border: none;
+                color: white;
+                padding: 10px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 2px 2px;
+                cursor: pointer;
+                border-radius: 12px;
+                width:175px;
+            }
+        </style>
     </head>
     <body>
         <div>
-            <table border='1'>
-                <tr>
-                    <th>No antrian</th>
-                    <th>Nama Pasien</th>
-                    <th>Kode Kunjungan</th>
-                </tr>
-
-                <c:forEach var="listPasien" items="${listantrian}">
-                    <tr>              
-                        <td>${listPasien.no_antrian}</td>
-                        <td>${listPasien.nama_pasien}</td>
-                        <td>${listPasien.kode_kunjungan}</td>
+             <div style=" float:left; height:500px; width: 30%;padding:20px;" >
+           <table border='1' id="customers">
+                    <tr>
+                        <th>No antrian</th>
+                        <th>Nama Pasien</th>
+                        <th>Kode Kunjungan</th>
                     </tr>
-                </c:forEach>
-            </table>
+
+                    <c:forEach var="listPasien" items="${listantrian}">
+                        <tr align='center'>              
+                            <td>${listPasien.no_antrian}</td>
+                            <td>${listPasien.nama_pasien}</td>
+                            <td>${listPasien.kode_kunjungan}</td> 
+                        </tr>
+                    </c:forEach>
+                </table>
+             </div>
 
         </div>
-        <div id="divform" style="width: 500px; margin-left: 450px" >
+         <div style=" float:left;height:500px; width: 60%;padding:20px;">
+                <div style="background-color: #ddd; padding: 5%">
             <form:form id="rekam" action="savePembayaran.htm" modelAttribute="pembayaranDto" method="POST">
                 <center><label style="font-size: 20px">Tambah Pembayaran </label></center>
                 <br>
@@ -57,7 +100,8 @@
                 <br> 
                 <label > Tarif Obat</label>
                 <form:input path="obat" id="obt" onkeyup="tambahtotal()" class="validate validate[required, maxSize[100]]"/>
-                <label onclick="tambahtindakan()">Tambah Tindakan</label>
+                <label onclick="tambahtindakan()" style="background-color: #00FF00; width: 150px; height: 30px; border-radius: 25px; padding: 5px; padding-left: 10px">Tambah Tindakan</label>
+                <br>
                 <label id="namatindakan"></label>
                 <form:input path="tindakan" id="tindakan" type="hidden" />
                 <label id="tariftindakan"></label>
@@ -70,6 +114,7 @@
                 <form:button type="submit" class="submit" id="save">Save</form:button>
             </form:form>
         </div>
+         </div>
     </body>
 </html>
 <script>
@@ -110,7 +155,7 @@
                 for (var i = 0; i < len; i++) {
                     tmp = data[i].kode_dokter;
                 }
-                alert(data.tarif_dokter);
+                alert(data);
                 document.getElementById("idinp").innerHTML = data.tarif_dokter;
                 document.getElementById("tdok").value=data.tarif_dokter;
                 document.getElementById("total").innerHTML = data.tarif_dokter;

@@ -5,13 +5,25 @@
  */
 package projeck.hafidh.klinik.dto;
 
+import java.util.List;
+import projeck.hafidh.klinik.model.KaryawanModel;
+
 /**
  *
  * @author Acer
  */
 public class KaryawanDto {
-     String id_karyawan,nama_karyawan,password,alamat,bagian,telp,kode_poli;
+     String id_karyawan,nama_karyawan,password,alamat,bagian,telp,kode_poli,jenis_kelamin;
+     List<KaryawanModel> listDataUser;
 
+    public List<KaryawanModel> getListDataUser() {
+        return listDataUser;
+    }
+
+    public void setListDataUser(List<KaryawanModel> listDataUser) {
+        this.listDataUser = listDataUser;
+    }
+     
     public String getId_karyawan() {
         return id_karyawan;
     }
@@ -20,6 +32,14 @@ public class KaryawanDto {
         this.id_karyawan = id_karyawan;
     }
 
+    public String getJenis_kelamin() {
+        return jenis_kelamin;
+    }
+
+    public void setJenis_kelamin(String jenis_kelamin) {
+        this.jenis_kelamin = jenis_kelamin;
+    }
+    
     public String getNama_karyawan() {
         return nama_karyawan;
     }

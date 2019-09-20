@@ -20,5 +20,7 @@ public interface KaryawanService {
     public void deleteDataKaryawan(String kdKaryawan) throws Exception;
     public KaryawanDto getUpdateDataKaryawan(String kdKaryawan) throws Exception;
     public void doUpdateDataKaryawan(KaryawanDto karyawanDto) throws Exception;
+    public KaryawanDto getDataId() throws Exception;
+     public KaryawanDto getDataLogin(KaryawanDto fromDto)throws Exception;
     
 }

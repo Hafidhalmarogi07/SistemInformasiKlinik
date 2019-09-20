@@ -48,7 +48,8 @@ public class KunjunganServiceImpl implements KunjunganService{
             kunjunganModel.setKode_kunjungan(untukId);
             kunjunganModel.setTanggal_kunjungan(kunjunganDto.getTanggal_kunjungan());
             kunjunganModel.setKode_poli(kunjunganDto.getKode_poli());
-            kunjunganModel.setKode_pasien(kunjunganDto.getKode_pasien());
+            String kodepaseien[]=kunjunganDto.getKode_pasien().split(" ");
+            kunjunganModel.setKode_pasien(kodepaseien[0]);
             kunjunganModel.setKode_dokter(kunjunganDto.getKode_dokter());
             kunjunganModel.setMetode_pembayran(kunjunganDto.getMetode_pembayran());
             
@@ -72,7 +73,8 @@ public class KunjunganServiceImpl implements KunjunganService{
         try {
             antrianModel.setKode_kunjungan(untukId);
             antrianModel.setNo_antrian(String.valueOf(ind1));
-            antrianModel.setNama_pasien(kunjunganDto.getKode_pasien());
+            String kodepaseien1[]=kunjunganDto.getKode_pasien().split(" ");
+            antrianModel.setKode_pasien(kodepaseien1[0]);
             antrianModel.setKode_poli(kunjunganDto.getKode_poli());
             antrianModel.setKode_dokter(kunjunganDto.getKode_dokter());    
             antrianDao.saveDataAntrian(antrianModel);
@@ -178,7 +180,8 @@ public class KunjunganServiceImpl implements KunjunganService{
             ddm.setKode_kunjungan(kunjunganDto.getKode_kunjungan());
             ddm.setTanggal_kunjungan(kunjunganDto.getTanggal_kunjungan());
             ddm.setKode_poli(kunjunganDto.getKode_poli());
-            ddm.setKode_pasien(kunjunganDto.getKode_pasien());
+            String kodepaseien[]=kunjunganDto.getKode_pasien().split(" ");
+            ddm.setKode_pasien(kodepaseien[0]);
             ddm.setKode_dokter(kunjunganDto.getKode_dokter());
             ddm.setMetode_pembayran(kunjunganDto.getMetode_pembayran());
            
@@ -186,6 +189,18 @@ public class KunjunganServiceImpl implements KunjunganService{
             e.printStackTrace();
         }
         kunjunganDao.updateKunjungan(ddm);
+        
+        
+        AntrianModel ant= new AntrianModel();
+        try {
+            String kodepaseien[]=kunjunganDto.getKode_pasien().split(" ");
+            ant.setKode_pasien(kodepaseien[0]);
+            ant.setKode_kunjungan(kunjunganDto.getKode_kunjungan());
+            ant.setKode_kunjungan(kunjunganDto.getKode_dokter());
+            ant.setKode_kunjungan(kunjunganDto.getKode_poli());
+        } catch (Exception e) {
+        }
+        antrianDao.updateAntrian(ant);
     }
     
 }

@@ -7,7 +7,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-<%@include file="HalamanUtama.jsp" %>
+<%@include file="MenuAdmin.jsp" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -20,10 +20,7 @@
         <div id="divform" >
              <form:form id="poli" action="savePoli.htm" modelAttribute="poliDto" method="POST">
                 <center><label style="font-size: 20px">Tambah Poli </label></center>
-
-                <br>
-
-              
+                <br>          
                 <label > Nama Poli</label>
                <form:input path="nama_poli" id="nm" class="validate validate[required, maxSize[100]]"/>
                

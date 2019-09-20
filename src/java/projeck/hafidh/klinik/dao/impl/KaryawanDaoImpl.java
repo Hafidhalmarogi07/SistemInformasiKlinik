@@ -8,6 +8,7 @@ package projeck.hafidh.klinik.dao.impl;
 import java.util.List;
 import org.hibernate.Query;
 import projeck.hafidh.klinik.dao.KaryawanDao;
+import projeck.hafidh.klinik.dto.KaryawanDto;
 import projeck.hafidh.klinik.model.KaryawanModel;
 
 /**
@@ -71,6 +72,21 @@ public class KaryawanDaoImpl extends HibernateUtil implements KaryawanDao{
         Query query = createQuery(sql).setParameter("id", kdKaryawan);
         dataList = query.list();
         return dataList;
+    }
+
+    @Override
+    public List<KaryawanModel> getlistlogin(KaryawanDto loginDto) throws Exception {
+        String sql = null;
+	List<KaryawanModel> listLogin = null;
+	try {
+            sql = "select model from KaryawanModel model where id_karyawan=:user and password=:pass";
+		Query query = createQuery(sql).setParameter("user", loginDto.getId_karyawan());
+		query.setParameter("pass", loginDto.getPassword());
+		listLogin = query.list();
+	} catch (Exception e) {
+            // TODO: handle exception
+	}
+	return listLogin;
     }
     
 }

@@ -13,9 +13,11 @@ import projeck.hafidh.klinik.model.AntrianRekamModel;
  * @author Acer
  */
 public interface AntrianRekamDao {
+    public List<Object[]>getDataAtrian()throws Exception;
     public void saveDataAntrianRekam(AntrianRekamModel antrianModel)throws Exception;
     public List<AntrianRekamModel> getListDataAntrianRekam()throws Exception;
     public AntrianRekamModel getListDataAntrianRekamById(String id)throws Exception;
     public void deleteAntrianRekam(String id);
+    public List <Object[]> getAntrianById(String id) throws Exception;
     
 }

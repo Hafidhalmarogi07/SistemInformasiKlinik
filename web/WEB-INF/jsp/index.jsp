@@ -16,9 +16,9 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
         <%
             if (session.getAttribute("username") != null) {
-                if (session.getAttribute("status").toString().equalsIgnoreCase("admin")) {
-                    response.sendRedirect("HalamanUtama.htm");
-                } else if (session.getAttribute("status").toString().equalsIgnoreCase("user")) {
+                if (session.getAttribute("status").toString().equalsIgnoreCase("Owner")) {
+                    response.sendRedirect("MenuAdmin.htm");
+                } else if (session.getAttribute("status").toString().equalsIgnoreCase("Poli")) {
                     response.sendRedirect("cobalogin.htm");
                 }
             }
@@ -55,10 +55,10 @@
             <label>Form Login Sistem</label>
             <br>
             <img src="boostrap/icon/user.png" style="width:50%" >
-            <form action="doLogin.htm" modelAttribute="formDto" method="POST" class="form login" role="form">
+            <form action="LoginKaryawan.htm" modelAttribute="formDto" method="POST" class="form login" role="form">
                 <fieldset>
                     <div class="form-group">
-                        <input class="form-control" placeholder="UserName" name="username" type="text" autofocus="">
+                        <input class="form-control" placeholder="Id Karyawan" name="id_karyawan" type="text" autofocus="">
                     </div>
                     <div class="form-group">
                         <input class="form-control" placeholder="Password" name="password" type="password" value="">
@@ -86,8 +86,7 @@
         
                 </div>-->
         
-        <c:url var="datadokterUrl" value="/Datadokter.htm"></c:url>
-        <a href="${datadokterUrl}" >Data Dokter</a>
+       
          <c:url var="dataLayananUrl" value="/DataLayanan.htm"></c:url>
         <a href="${dataLayananUrl}" >Data Layanan</a>
         <c:url var="dataPasienUrl" value="/DataPasien.htm"></c:url>

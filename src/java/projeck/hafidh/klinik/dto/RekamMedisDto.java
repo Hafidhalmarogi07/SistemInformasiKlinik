@@ -10,8 +10,16 @@ package projeck.hafidh.klinik.dto;
  * @author Acer
  */
 public class RekamMedisDto {
-    String kode_rekam,kode_kunjungan,keluhan,diagnosa,tindakan,resep,id_dokter,nama_pasien;
+    String kode_rekam,kode_kunjungan,keluhan,diagnosa,tindakan,resep,id_dokter,nama_pasien,kode_poli;
 
+    public String getKode_poli() {
+        return kode_poli;
+    }
+
+    public void setKode_poli(String kode_poli) {
+        this.kode_poli = kode_poli;
+    }
+    
     public String getId_dokter() {
         return id_dokter;
     }

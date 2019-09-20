@@ -72,8 +72,7 @@ public class LaporanServiceImpl implements LaporanService{
                     laporanDto.setMetode_pembayaran(model[5].toString());
                     
                             
-                    listDataDto.add(laporanDto);
-                
+                    listDataDto.add(laporanDto);                
                 }
                
            }

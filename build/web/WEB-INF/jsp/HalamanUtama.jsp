@@ -27,7 +27,7 @@
             }
         %>
     </head>
-    <body bgcolor="#0000CD" background="#0000CD">
+    <body>
 
         <div class="w3-container " style="height:85px;padding:3px;background-color: #00FF00">
             <img src="boostrap/icon/logo2.png" style="width:35%" >
@@ -39,7 +39,7 @@
                 <label id="detik"></label>
             </label>
         </div>
-        <div class="w3-container w3-red" style="height:25px;padding:1px 16px;">
+        <div class="w3-container w3-red" style="height:30px;padding:1px 16px;">
             <label style="color: white;font-family:Times New Roman;font-size: 20px; float: right"> 
                 Bandung,  
                 <label id="hari"></label>
@@ -52,7 +52,7 @@
 
             </label>
         </div>
-
+        <%--
         <div class="w3-container w3-dark-grey" style="height:105px;padding:5px 10px">
             <c:url var="dataPasienUrl" value="/DataPasien.htm"></c:url>
             <a href="${dataPasienUrl}" >
@@ -97,7 +97,7 @@
             <c:url var="logoutUrl" value="/exit.htm"></c:url>
             <a href="${logoutUrl}"><img src="boostrap/icon/logout.png" style="width:7%" class="hov"></a>
 
-        </div>
+        </div> --%>
 
     </body>
 </html>

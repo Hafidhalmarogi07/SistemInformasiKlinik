@@ -155,7 +155,7 @@
                 type: 'GET',
                 success: function (response) {
                     var data = JSON.parse(response);
-                    var len = data.length;                   
+                    var len = data.length;
                     content = '<tr><th>NO</th><th>Kode Kunjungan</th><th>Tanggal Kunjugan</th><th>Nama Poli</th><th>Nama Pasien</th><th >Nama Dokter</th><th>Metode Pembayaran</th></tr> ';
                     for (var i = 0; i < len; i++) {
                          if(data[i].tanggal_kunjungan>=mulai && data[i].tanggal_kunjungan<=selesai){
